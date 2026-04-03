@@ -5,7 +5,7 @@ GH_REPOSITORY=$GH_REPOSITORY
 GH_TOKEN=$GH_TOKEN
 GH_REG_TOKEN=$GH_REG_TOKEN
 
-RUNNER_SUFFIX=$(cat /dev/urandom | tr -dc 'a-z0-9' | fold -w 5 | head -n 1)
+RUNNER_SUFFIX=${RUNNER_SUFFIX:-"$(cat /dev/urandom | tr -dc 'a-z0-9' | fold -w 5 | head -n 1)"}"
 RUNNER_NAME="${REAL_HOSTNAME:-dependaNode}-${RUNNER_SUFFIX}"
 
 cd /home/docker/actions-runner
